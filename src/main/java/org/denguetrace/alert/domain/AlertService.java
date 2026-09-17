@@ -17,7 +17,7 @@ public class AlertService {
         this.alertRepository = alertRepository;
     }
 
-    public List<Alert> getAllBooks() {
+    public List<Alert> getAllAlerts() {
         return alertRepository.findAll();
     }
 
@@ -25,7 +25,7 @@ public class AlertService {
         return alertRepository.findById(id).orElseThrow(() -> new RuntimeException("Alert with id " + id + " not found"));
     }
 
-    public void addBook(Alert newAlert){
+    public void createAlert(Alert newAlert){
         alertRepository.save(newAlert);
     }
 }
